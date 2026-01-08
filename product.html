@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabcurate - Premium Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-cream': '#fbf7f0',
+                        'brand-gold': '#d4af37',
+                        'brand-gold-dark': '#b49228',
+                        'brand-black': '#1a1818',
+                        'brand-text': '#4a4a4a',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    backgroundImage: {
+                        'ribbon-pattern': "url('assets/main-hero.png')",
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* The Sheen Effect */
+        @keyframes sheen-flow {
+            0% { transform: translateX(-100%) skewX(-15deg); }
+            50%, 100% { transform: translateX(200%) skewX(-15deg); }
+        }
+        .animate-sheen::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.2), transparent);
+            transform: translateX(-100%) skewX(-15deg);
+            animation: sheen-flow 4s infinite ease-in-out;
+        }
+
+        /* Subtle vertical float */
+        @keyframes float-vertical {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-float { animation: float-vertical 6s ease-in-out infinite; }
+        .animate-float-delay { animation: float-vertical 7s ease-in-out infinite reverse; }
+    </style>
+
+
+</head>
+
+<body class="bg-brand-cream text-gray-800 font-sans antialiased">
+
+    <div class="bg-gradient-to-r from-[#c5a028] to-[#e6c860] text-white text-xs font-medium text-center py-2 tracking-widest uppercase">
+        Don't Miss Out - Buy 2 Get 1 FREE
+    </div>
+
+<header class="sticky top-0 z-[100] border-b border-[#d4af37]/30 shadow-lg transition-all duration-300 relative overflow-hidden">
+    
+    <div class="absolute inset-0 z-0 bg-gradient-to-r from-[#fdfbf7] via-[#f7f4ed] to-[#fdfbf7]"></div>
+
+    <div class="absolute top-1/2 left-0 w-full -translate-y-1/2 z-0 flex items-center justify-between opacity-80 pointer-events-none overflow-hidden">
+        
+        <div class="flex-grow h-[40px] relative overflow-hidden">
+            <svg class="absolute top-1/2 -translate-y-1/2 w-full h-full" preserveAspectRatio="none">
+                <path d="M0,20 Q50,5 100,20 T200,20 T300,20 T400,20 T500,20 T600,20 T700,20 T800,20 T900,20 T1000,20" 
+                      fill="none" stroke="#d4af37" stroke-width="2" class="drop-shadow-sm"/>
+            </svg>
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent w-[50%] skew-x-12 animate-[sheen-flow_3s_infinite_linear]"></div>
+        </div>
+
+        <div class="w-[280px] md:w-[320px] flex-shrink-0 flex items-center justify-center relative px-2">
+            <svg width="40" height="40" viewBox="0 0 50 50" class="transform -scale-x-100 text-[#d4af37]">
+                <path fill="currentColor" d="M25,25 C10,25 5,40 0,40 C5,40 10,35 15,30 C20,35 25,45 25,45 C25,45 30,35 35,30 C40,35 45,40 50,40 C45,40 40,25 25,25 Z" opacity="0.6"/>
+            </svg>
+            <div class="w-full"></div>
+            <svg width="40" height="40" viewBox="0 0 50 50" class="text-[#d4af37]">
+                <path fill="currentColor" d="M25,25 C10,25 5,40 0,40 C5,40 10,35 15,30 C20,35 25,45 25,45 C25,45 30,35 35,30 C40,35 45,40 50,40 C45,40 40,25 25,25 Z" opacity="0.6"/>
+            </svg>
+        </div>
+
+        <div class="flex-grow h-[40px] relative overflow-hidden">
+            <svg class="absolute top-1/2 -translate-y-1/2 w-full h-full" preserveAspectRatio="none">
+                <path d="M0,20 Q50,35 100,20 T200,20 T300,20 T400,20 T500,20 T600,20 T700,20 T800,20 T900,20" 
+                      fill="none" stroke="#d4af37" stroke-width="2" class="drop-shadow-sm"/>
+            </svg>
+             <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent w-[50%] skew-x-12 animate-[sheen-flow_3s_infinite_linear] delay-75"></div>
+        </div>
+
+    </div>
+
+    <div class="container mx-auto px-6 py-2 flex justify-between items-center h-24 relative z-10">
+        
+        <div class="flex items-center gap-4">
+            <button id="mobile-toggle" class="md:hidden bg-white/40 backdrop-blur-sm p-2 rounded-full border border-white/50 text-gray-800 hover:text-brand-gold transition">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+
+            <div class="hidden md:flex items-center bg-white/80 backdrop-blur-md border border-[#d4af37]/30 rounded-full px-4 py-2 w-[160px] shadow-sm transition-all duration-300 hover:w-[200px] hover:border-[#d4af37] group">
+                <input type="text" placeholder="Search..." 
+                       class="bg-transparent border-none outline-none text-xs text-gray-600 w-full placeholder-gray-400 font-sans tracking-wide">
+                <button class="text-[#d4af37] group-hover:text-[#b08d2f] transition-transform group-hover:scale-110">
+                    <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
+            <a href="index.html" class="relative z-10 group">
+                <div class="absolute inset-0 bg-[#d4af37] opacity-20 blur-xl rounded-full scale-110 group-hover:scale-125 transition-transform duration-700"></div>
+                <img src="assets/logo.jpeg" alt="Samyus Logo" 
+                     class="h-14 md:h-16 object-contain relative z-20 drop-shadow-lg group-hover:brightness-110 transition duration-500">
+            </a>
+        </div>
+
+        <div class="flex gap-6 items-center bg-white/40 backdrop-blur-sm p-2 rounded-full border border-white/50 shadow-sm">
+            <button class="text-gray-800 hover:text-brand-gold transition hidden md:block">
+                <i class="fa-regular fa-user text-lg"></i>
+            </button>
+            <button class="text-gray-800 hover:text-brand-gold transition relative">
+                <i class="fa-solid fa-bag-shopping text-lg"></i>
+                <span class="absolute -top-1 -right-2 bg-brand-gold text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-md">0</span>
+            </button>
+        </div>
+    </div>
+
+    <nav class="hidden md:flex justify-center gap-10 py-3 text-xs font-bold uppercase tracking-widest text-gray-600 border-t border-[#d4af37]/20 bg-[#fdfbf7]/90 backdrop-blur-sm relative z-10">
+        <a href="index.html" class="hover:text-brand-gold transition transform hover:-translate-y-0.5 duration-300">Home</a>
+        <a href="product.html" class="flex items-center gap-1 hover:text-brand-gold transition transform hover:-translate-y-0.5 duration-300">Products <i class="fa-solid fa-angle-down text-[10px]"></i></a>
+        <a href="#" class="flex items-center gap-1 hover:text-brand-gold transition transform hover:-translate-y-0.5 duration-300">Shopping <i class="fa-solid fa-angle-down text-[10px]"></i></a>
+        <a href="#" class="flex items-center gap-1 hover:text-brand-gold transition transform hover:-translate-y-0.5 duration-300">Earrs <i class="fa-solid fa-angle-down text-[10px]"></i></a>
+        <a href="about.html" class="flex items-center gap-1 hover:text-brand-gold transition transform hover:-translate-y-0.5 duration-300">Stories <i class="fa-solid fa-angle-down text-[10px]"></i></a>
+        <a href="contact.html" class="hover:text-brand-gold transition transform hover:-translate-y-0.5 duration-300">Contact</a>
+    </nav>
+</header>
+
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-[110] hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="mobile-drawer" class="fixed top-0 left-0 w-[80%] max-w-[300px] h-full bg-[#fdfbf7] z-[120] transform -translate-x-full transition-transform duration-500 ease-in-out shadow-2xl flex flex-col">
+        <div class="flex justify-between items-center p-6 border-b border-[#e5e0d8]">
+            <img src="assets/logo.jpeg" alt="Logo" class="h-8 object-contain">
+            <button id="close-menu" class="text-gray-500 hover:text-brand-gold text-2xl focus:outline-none">&times;</button>
+        </div>
+        <div class="flex-1 p-6 space-y-6 overflow-y-auto">
+            <a href="index.html" class="block text-sm font-bold uppercase tracking-widest text-gray-700 hover:text-brand-gold">Home</a>
+            <a href="product.html" class="block text-sm font-bold uppercase tracking-widest text-gray-700 hover:text-brand-gold">Products</a>
+            <a href="" class="block text-sm font-bold uppercase tracking-widest text-gray-700 hover:text-brand-gold">Shopping</a>
+            <a href="about.html" class="block text-sm font-bold uppercase tracking-widest text-gray-700 hover:text-brand-gold">Stories</a>
+        </div>
+    </div>
+
+    <section class="pt-16 pb-12 border-b border-[#d4af37]/10 relative">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h4 class="text-[#d4af37] text-[10px] font-bold uppercase tracking-[0.3em] mb-2">Just Arrived</h4>
+                    <h2 class="font-serif text-3xl text-[#1a1a1a]">The Modern Drape</h2>
+                </div>
+                <a href="#" class="text-[10px] font-bold uppercase border-b border-gray-300 hover:border-[#d4af37] pb-1 hidden md:block">View Collection</a>
+            </div>
+
+            <div class="relative group">
+                <button id="scroll-left" class="hidden md:flex absolute left-0 top-[40%] -translate-y-1/2 -translate-x-5 z-20 bg-white text-[#d4af37] w-12 h-12 rounded-full shadow-lg items-center justify-center hover:bg-[#d4af37] hover:text-white border border-[#d4af37]/20 transition-all">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div id="product-scroll-container" class="flex overflow-x-auto gap-6 no-scrollbar pb-4 scroll-smooth snap-x snap-mandatory">
+                    <div class="min-w-[280px] md:min-w-[320px] snap-center group/card cursor-pointer">
+                        <div class="relative overflow-hidden aspect-[3/4] mb-4">
+                            <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=80&w=1946&auto=format&fit=crop" class="w-full h-full object-cover transition duration-1000 group-hover/card:scale-105">
+                        </div>
+                        <h3 class="font-serif text-lg text-[#1a1a1a]">Velvet Gown</h3>
+                        <p class="text-xs text-gray-500 mt-1">Midnight Blue Satin</p>
+                    </div>
+                    <div class="min-w-[280px] md:min-w-[320px] snap-center group/card cursor-pointer">
+                        <div class="relative overflow-hidden aspect-[3/4] mb-4">
+                            <img src="https://images.unsplash.com/photo-1617137968427-85924c809a10?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover transition duration-1000 group-hover/card:scale-105">
+                            <div class="absolute top-3 left-3 bg-[#d4af37] text-white text-[9px] px-2 py-1 uppercase font-bold tracking-wider">New</div>
+                        </div>
+                        <h3 class="font-serif text-lg text-[#1a1a1a]">Ikkath Fusion Kurti</h3>
+                        <p class="text-xs text-gray-500 mt-1">Handwoven Ikat</p>
+                    </div>
+                    <div class="min-w-[280px] md:min-w-[320px] snap-center group/card cursor-pointer">
+                        <div class="relative overflow-hidden aspect-[3/4] mb-4">
+                            <img src="https://images.unsplash.com/photo-1631233859262-0d62bf36f951?q=80&w=1887&auto=format&fit=crop" class="w-full h-full object-cover transition duration-1000 group-hover/card:scale-105">
+                        </div>
+                        <h3 class="font-serif text-lg text-[#1a1a1a]">Organza Floral Saree</h3>
+                        <p class="text-xs text-gray-500 mt-1">Sheer Organza</p>
+                    </div>
+                    <div class="min-w-[280px] md:min-w-[320px] snap-center group/card cursor-pointer">
+                        <div class="relative overflow-hidden aspect-[3/4] mb-4">
+                            <img src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=1887&auto=format&fit=crop" class="w-full h-full object-cover transition duration-1000 group-hover/card:scale-105">
+                        </div>
+                        <h3 class="font-serif text-lg text-[#1a1a1a]">Kalamkari Anarkali</h3>
+                        <p class="text-xs text-gray-500 mt-1">Hand-Painted Cotton</p>
+                    </div>
+                </div>
+
+                <button id="scroll-right" class="hidden md:flex absolute right-0 top-[40%] -translate-y-1/2 translate-x-5 z-20 bg-white text-[#d4af37] w-12 h-12 rounded-full shadow-lg items-center justify-center hover:bg-[#d4af37] hover:text-white border border-[#d4af37]/20 transition-all">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="fabric-section" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            
+            <div class="text-center mb-16">
+                <img src="assets/logo.jpeg" class="h-10 mx-auto mb-4 object-contain opacity-50">
+                <h2 class="font-serif text-4xl text-[#1a1a1a]">The Fabric Archive</h2>
+                <div class="w-16 h-px bg-[#d4af37] mx-auto mt-4 mb-4"></div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-gray-500">Premium Materials & Textiles</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+
+                <div class="group">
+                    <div class="relative overflow-hidden mb-3 border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1598414446473-b2650570b56c?q=80&w=1935&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <div class="absolute bottom-0 w-full bg-white/90 py-2 text-center text-[10px] uppercase font-bold tracking-widest translate-y-full group-hover:translate-y-0 transition duration-300">View Swatches</div>
+                    </div>
+                    <h3 class="font-serif text-lg text-[#1a1a1a]">Ikkath</h3>
+                    <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Blouse | Kurti | Frock</p>
+                </div>
+
+                <div class="group">
+                    <div class="relative overflow-hidden mb-3 border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1629079447841-a61053ef0913?q=80&w=1887&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <div class="absolute bottom-0 w-full bg-white/90 py-2 text-center text-[10px] uppercase font-bold tracking-widest translate-y-full group-hover:translate-y-0 transition duration-300">View Swatches</div>
+                    </div>
+                    <h3 class="font-serif text-lg text-[#1a1a1a]">Jaipur Cotton</h3>
+                    <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Signature Sarees</p>
+                </div>
+
+                <div class="group">
+                    <div class="relative overflow-hidden mb-3 border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1610189012906-4783382752f2?q=80&w=1888&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <div class="absolute bottom-0 w-full bg-white/90 py-2 text-center text-[10px] uppercase font-bold tracking-widest translate-y-full group-hover:translate-y-0 transition duration-300">View Swatches</div>
+                    </div>
+                    <h3 class="font-serif text-lg text-[#1a1a1a]">Kalamkari</h3>
+                    <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Saree | Blouse | Kurti</p>
+                </div>
+
+                <div class="group">
+                    <div class="relative overflow-hidden mb-3 border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1605218439524-b3ddb2bc7595?q=80&w=1887&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <div class="absolute bottom-0 w-full bg-white/90 py-2 text-center text-[10px] uppercase font-bold tracking-widest translate-y-full group-hover:translate-y-0 transition duration-300">View Swatches</div>
+                    </div>
+                    <h3 class="font-serif text-lg text-[#1a1a1a]">Banarasi Brocade</h3>
+                    <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Bridal Lehengas</p>
+                </div>
+
+                <div class="group">
+                    <div class="relative overflow-hidden mb-3 border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1582236521556-9915c2ba244f?q=80&w=1887&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-serif text-lg text-[#1a1a1a]">Pure Organza</h3>
+                    <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Saree | Blouse | Frock</p>
+                </div>
+
+                <div class="group">
+                    <div class="relative overflow-hidden mb-3 border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1770&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-serif text-lg text-[#1a1a1a]">Fluid Georgette</h3>
+                    <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Frock | Kurti | Lehenga</p>
+                </div>
+
+                <div class="group">
+                    <div class="relative overflow-hidden mb-3 border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1595991209266-5ff5a3a2f008?q=80&w=1887&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-serif text-lg text-[#1a1a1a]">Raw Silk</h3>
+                    <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Blouse | Heritage Lehenga</p>
+                </div>
+
+                <div class="group">
+                    <div class="relative overflow-hidden mb-3 border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1583391733958-e026f3334e6c?q=80&w=1887&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-serif text-lg text-[#1a1a1a]">Embroidered Net</h3>
+                    <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Layered Lehengas</p>
+                </div>
+
+                <div class="group">
+                    <div class="relative overflow-hidden mb-3 border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1606293926075-69a00febf280?q=80&w=1892&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-serif text-lg text-[#1a1a1a]">Organic Cotton</h3>
+                    <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Kurti | Blouse | Frock</p>
+                </div>
+
+                <div class="group">
+                    <div class="relative overflow-hidden mb-3 border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1601625126839-444449830843?q=80&w=1911&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-serif text-lg text-[#1a1a1a]">Soft Rayon</h3>
+                    <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Everyday Kurtis</p>
+                </div>
+
+                <div class="group">
+                    <div class="relative overflow-hidden mb-3 border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1565269785535-64d4b291d9d9?q=80&w=1887&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-serif text-lg text-[#1a1a1a]">Lustrous Satin</h3>
+                    <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Evening Frocks</p>
+                </div>
+
+                <div class="group bg-[#f9f8f6] p-6 border border-[#e5e0d8] flex flex-col justify-center text-center h-[360px]">
+                    <h3 class="font-serif text-xl text-[#1a1a1a] mb-4">Tailoring<br>Essentials</h3>
+                    <div class="w-12 h-px bg-[#d4af37] mx-auto mb-6"></div>
+                    <ul class="space-y-3 text-xs uppercase tracking-widest text-gray-500">
+                        <li class="hover:text-[#d4af37] cursor-pointer">Lining Material</li>
+                        <li class="hover:text-[#d4af37] cursor-pointer">Saree Falls</li>
+                        <li class="hover:text-[#d4af37] cursor-pointer">Canvas (Collar/Structure)</li>
+                    </ul>
+                    <a href="#" class="mt-8 text-[10px] font-bold uppercase border-b border-gray-400 pb-1 hover:text-[#d4af37] hover:border-[#d4af37] transition inline-block mx-auto">Shop Accessories</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-[#d4af37]/20 pt-16 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <img src="assets/logo.jpeg" class="h-12 mx-auto mb-6 object-contain opacity-70">
+            <p class="text-xs text-gray-400">&copy; 2026 Samyus Atelier. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // 1. Mobile Menu
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const closeMenu = document.getElementById('close-menu');
+            const mobileOverlay = document.getElementById('mobile-overlay');
+            const mobileDrawer = document.getElementById('mobile-drawer');
+
+            if (mobileToggle && mobileDrawer) {
+                function openMobileMenu() {
+                    mobileOverlay.classList.remove('hidden');
+                    setTimeout(() => mobileOverlay.classList.remove('opacity-0'), 10);
+                    mobileDrawer.classList.remove('-translate-x-full');
+                    document.body.style.overflow = 'hidden'; 
+                }
+                function closeMobileMenu() {
+                    mobileOverlay.classList.add('opacity-0');
+                    mobileDrawer.classList.add('-translate-x-full');
+                    setTimeout(() => {
+                        mobileOverlay.classList.add('hidden');
+                        document.body.style.overflow = 'auto'; 
+                    }, 300);
+                }
+                mobileToggle.addEventListener('click', openMobileMenu);
+                if (closeMenu) closeMenu.addEventListener('click', closeMobileMenu);
+                if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+            }
+
+            // 2. Horizontal Scroll Arrow Logic
+            const scrollContainer = document.getElementById('product-scroll-container');
+            const scrollLeftBtn = document.getElementById('scroll-left');
+            const scrollRightBtn = document.getElementById('scroll-right');
+
+            if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+                
+                scrollLeftBtn.addEventListener('click', () => {
+                    const cardWidth = scrollContainer.firstElementChild ? scrollContainer.firstElementChild.offsetWidth + 24 : 350;
+                    scrollContainer.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                });
+
+                scrollRightBtn.addEventListener('click', () => {
+                    const cardWidth = scrollContainer.firstElementChild ? scrollContainer.firstElementChild.offsetWidth + 24 : 350;
+                    scrollContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

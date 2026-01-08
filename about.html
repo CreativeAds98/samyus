@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabcurate - Premium Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-cream': '#fbf7f0',
+                        'brand-gold': '#d4af37',
+                        'brand-gold-dark': '#b49228',
+                        'brand-black': '#1a1818',
+                        'brand-text': '#4a4a4a',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    backgroundImage: {
+                        'ribbon-pattern': "url('assets/main-hero.png')",
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* The Sheen Effect */
+        @keyframes sheen-flow {
+            0% { transform: translateX(-100%) skewX(-15deg); }
+            50%, 100% { transform: translateX(200%) skewX(-15deg); }
+        }
+        .animate-sheen::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.2), transparent);
+            transform: translateX(-100%) skewX(-15deg);
+            animation: sheen-flow 4s infinite ease-in-out;
+        }
+
+        /* Subtle vertical float */
+        @keyframes float-vertical {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-float { animation: float-vertical 6s ease-in-out infinite; }
+        .animate-float-delay { animation: float-vertical 7s ease-in-out infinite reverse; }
+    </style>
+
+
+</head>
+
+<body class="bg-brand-cream text-gray-800 font-sans antialiased">
+
+    <div class="bg-gradient-to-r from-[#c5a028] to-[#e6c860] text-white text-xs font-medium text-center py-2 tracking-widest uppercase">
+        Don't Miss Out - Buy 2 Get 1 FREE
+    </div>
+
+<header class="sticky top-0 z-[100] border-b border-[#d4af37]/30 shadow-lg transition-all duration-300 relative overflow-hidden">
+    
+    <div class="absolute inset-0 z-0 bg-gradient-to-r from-[#fdfbf7] via-[#f7f4ed] to-[#fdfbf7]"></div>
+
+    <div class="absolute top-1/2 left-0 w-full -translate-y-1/2 z-0 flex items-center justify-between opacity-80 pointer-events-none overflow-hidden">
+        
+        <div class="flex-grow h-[40px] relative overflow-hidden">
+            <svg class="absolute top-1/2 -translate-y-1/2 w-full h-full" preserveAspectRatio="none">
+                <path d="M0,20 Q50,5 100,20 T200,20 T300,20 T400,20 T500,20 T600,20 T700,20 T800,20 T900,20 T1000,20" 
+                      fill="none" stroke="#d4af37" stroke-width="2" class="drop-shadow-sm"/>
+            </svg>
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent w-[50%] skew-x-12 animate-[sheen-flow_3s_infinite_linear]"></div>
+        </div>
+
+        <div class="w-[280px] md:w-[320px] flex-shrink-0 flex items-center justify-center relative px-2">
+            <svg width="40" height="40" viewBox="0 0 50 50" class="transform -scale-x-100 text-[#d4af37]">
+                <path fill="currentColor" d="M25,25 C10,25 5,40 0,40 C5,40 10,35 15,30 C20,35 25,45 25,45 C25,45 30,35 35,30 C40,35 45,40 50,40 C45,40 40,25 25,25 Z" opacity="0.6"/>
+            </svg>
+            <div class="w-full"></div>
+            <svg width="40" height="40" viewBox="0 0 50 50" class="text-[#d4af37]">
+                <path fill="currentColor" d="M25,25 C10,25 5,40 0,40 C5,40 10,35 15,30 C20,35 25,45 25,45 C25,45 30,35 35,30 C40,35 45,40 50,40 C45,40 40,25 25,25 Z" opacity="0.6"/>
+            </svg>
+        </div>
+
+        <div class="flex-grow h-[40px] relative overflow-hidden">
+            <svg class="absolute top-1/2 -translate-y-1/2 w-full h-full" preserveAspectRatio="none">
+                <path d="M0,20 Q50,35 100,20 T200,20 T300,20 T400,20 T500,20 T600,20 T700,20 T800,20 T900,20" 
+                      fill="none" stroke="#d4af37" stroke-width="2" class="drop-shadow-sm"/>
+            </svg>
+             <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent w-[50%] skew-x-12 animate-[sheen-flow_3s_infinite_linear] delay-75"></div>
+        </div>
+
+    </div>
+
+    <div class="container mx-auto px-6 py-2 flex justify-between items-center h-24 relative z-10">
+        
+        <div class="flex items-center gap-4">
+            <button id="mobile-toggle" class="md:hidden bg-white/40 backdrop-blur-sm p-2 rounded-full border border-white/50 text-gray-800 hover:text-brand-gold transition">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+
+            <div class="hidden md:flex items-center bg-white/80 backdrop-blur-md border border-[#d4af37]/30 rounded-full px-4 py-2 w-[160px] shadow-sm transition-all duration-300 hover:w-[200px] hover:border-[#d4af37] group">
+                <input type="text" placeholder="Search..." 
+                       class="bg-transparent border-none outline-none text-xs text-gray-600 w-full placeholder-gray-400 font-sans tracking-wide">
+                <button class="text-[#d4af37] group-hover:text-[#b08d2f] transition-transform group-hover:scale-110">
+                    <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
+            <a href="index.html" class="relative z-10 group">
+                <div class="absolute inset-0 bg-[#d4af37] opacity-20 blur-xl rounded-full scale-110 group-hover:scale-125 transition-transform duration-700"></div>
+                <img src="assets/logo.jpeg" alt="Samyus Logo" 
+                     class="h-14 md:h-16 object-contain relative z-20 drop-shadow-lg group-hover:brightness-110 transition duration-500">
+            </a>
+        </div>
+
+        <div class="flex gap-6 items-center bg-white/40 backdrop-blur-sm p-2 rounded-full border border-white/50 shadow-sm">
+            <button class="text-gray-800 hover:text-brand-gold transition hidden md:block">
+                <i class="fa-regular fa-user text-lg"></i>
+            </button>
+            <button class="text-gray-800 hover:text-brand-gold transition relative">
+                <i class="fa-solid fa-bag-shopping text-lg"></i>
+                <span class="absolute -top-1 -right-2 bg-brand-gold text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-md">0</span>
+            </button>
+        </div>
+    </div>
+
+    <nav class="hidden md:flex justify-center gap-10 py-3 text-xs font-bold uppercase tracking-widest text-gray-600 border-t border-[#d4af37]/20 bg-[#fdfbf7]/90 backdrop-blur-sm relative z-10">
+        <a href="#" class="hover:text-brand-gold transition transform hover:-translate-y-0.5 duration-300">Home</a>
+        <a href="#" class="flex items-center gap-1 hover:text-brand-gold transition transform hover:-translate-y-0.5 duration-300">Products <i class="fa-solid fa-angle-down text-[10px]"></i></a>
+        <a href="#" class="flex items-center gap-1 hover:text-brand-gold transition transform hover:-translate-y-0.5 duration-300">Shopping <i class="fa-solid fa-angle-down text-[10px]"></i></a>
+        <a href="#" class="flex items-center gap-1 hover:text-brand-gold transition transform hover:-translate-y-0.5 duration-300">Earrs <i class="fa-solid fa-angle-down text-[10px]"></i></a>
+        <a href="#" class="flex items-center gap-1 hover:text-brand-gold transition transform hover:-translate-y-0.5 duration-300">Stories <i class="fa-solid fa-angle-down text-[10px]"></i></a>
+        <a href="#" class="hover:text-brand-gold transition transform hover:-translate-y-0.5 duration-300">Contact</a>
+    </nav>
+</header>
+
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-[110] hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="mobile-drawer" class="fixed top-0 left-0 w-[80%] max-w-[300px] h-full bg-[#fdfbf7] z-[120] transform -translate-x-full transition-transform duration-500 ease-in-out shadow-2xl flex flex-col">
+        <div class="flex justify-between items-center p-6 border-b border-[#e5e0d8]">
+            <img src="assets/logo.jpeg" alt="Logo" class="h-8 object-contain">
+            <button id="close-menu" class="text-gray-500 hover:text-brand-gold text-2xl focus:outline-none">&times;</button>
+        </div>
+        <div class="flex-1 p-6 space-y-6 overflow-y-auto">
+            <a href="#" class="block text-sm font-bold uppercase tracking-widest text-gray-700 hover:text-brand-gold">Home</a>
+            <a href="#" class="block text-sm font-bold uppercase tracking-widest text-gray-700 hover:text-brand-gold">Products</a>
+            <a href="#" class="block text-sm font-bold uppercase tracking-widest text-gray-700 hover:text-brand-gold">Shopping</a>
+            <a href="#" class="block text-sm font-bold uppercase tracking-widest text-gray-700 hover:text-brand-gold">Stories</a>
+        </div>
+    </div>
+
+
+    <section class="parallax relative w-full h-[60vh] min-h-[500px] flex items-center justify-center" 
+             style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop');">
+        
+        <div class="absolute inset-0 bg-black/40"></div>
+        
+        <div class="relative z-10 text-center text-white px-6">
+            <p class="text-[#d4af37] font-bold uppercase tracking-[0.4em] text-xs mb-4 animate-fade-in-up">Since 2016</p>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-none mb-6">
+                Architects of <br><span class="italic font-light">Elegance</span>
+            </h1>
+            <div class="w-24 h-px bg-[#d4af37] mx-auto"></div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-brand-cream relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('https://www.transparenttextures.com/patterns/linen.png');"></div>
+
+        <div class="max-w-[1100px] mx-auto flex flex-col md:flex-row gap-16 items-center">
+            
+            <div class="w-full md:w-1/2 relative">
+                <div class="relative z-10 border-[8px] border-white shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1534120247760-c44c3e4a62f1?q=80&w=1898&auto=format&fit=crop" alt="Tailor working" class="w-full grayscale hover:grayscale-0 transition duration-700">
+                </div>
+                <div class="absolute top-6 -left-6 w-full h-full border border-[#d4af37] z-0"></div>
+            </div>
+
+            <div class="w-full md:w-1/2 relative z-10">
+                <h4 class="text-[#d4af37] text-xs font-bold uppercase tracking-[0.3em] mb-4">Our Origins</h4>
+                <h2 class="font-serif text-4xl text-brand-black mb-8">Born in the<br>Heart of Couture.</h2>
+                
+                <div class="text-gray-600 font-light leading-8 tracking-wide space-y-6 text-sm">
+                    <p>
+                        <span class="text-6xl float-left font-serif text-[#d4af37] mr-3 mt-[-10px] leading-none">S</span>
+                        amyus began not as a brand, but as a rebellion against the temporary. In a world obsessed with fast fashion, we sought to pause time. 
+                    </p>
+                    <p>
+                        Founded in 2016, our atelier was built on a singular premise: that a garment should be an investment in oneself. We combined the structured discipline of British tailoring with the fluidity of Italian drapery, creating a silhouette that is distinctively ours.
+                    </p>
+                    <p>
+                        We do not just stitch fabric; we weave character.
+                    </p>
+                </div>
+
+                <div class="mt-8">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Signature_sample.svg/1200px-Signature_sample.svg.png" alt="Signature" class="h-12 opacity-60">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-[#1a1a1a] text-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl italic text-[#d4af37] mb-2">The Philosophy</h2>
+                <div class="w-px h-12 bg-gradient-to-b from-[#d4af37] to-transparent mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center group p-8 border border-white/5 hover:border-[#d4af37]/50 transition duration-500">
+                    <div class="text-4xl text-[#d4af37] mb-6"><i class="fa-solid fa-ruler-combined"></i></div>
+                    <h3 class="text-lg font-serif uppercase tracking-widest mb-4">Precision</h3>
+                    <p class="text-xs text-gray-400 leading-6">
+                        We measure not in inches, but in millimeters. The difference between good and perfect is a single thread.
+                    </p>
+                </div>
+
+                <div class="text-center group p-8 border border-white/5 hover:border-[#d4af37]/50 transition duration-500 bg-[#222]">
+                    <div class="text-4xl text-[#d4af37] mb-6"><i class="fa-solid fa-fingerprint"></i></div>
+                    <h3 class="text-lg font-serif uppercase tracking-widest mb-4">Identity</h3>
+                    <p class="text-xs text-gray-400 leading-6">
+                        Clothes that do not mask who you are, but amplify it. Our designs are a canvas for your persona.
+                    </p>
+                </div>
+
+                <div class="text-center group p-8 border border-white/5 hover:border-[#d4af37]/50 transition duration-500">
+                    <div class="text-4xl text-[#d4af37] mb-6"><i class="fa-regular fa-gem"></i></div>
+                    <h3 class="text-lg font-serif uppercase tracking-widest mb-4">Rarity</h3>
+                    <p class="text-xs text-gray-400 leading-6">
+                        Limited runs, sourced fabrics, and bespoke finishing. We create items that few will own, but all will desire.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="relative w-full py-24 bg-brand-alabaster">
+        <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row-reverse items-center gap-12">
+            
+            <div class="w-full md:w-1/2 relative">
+                <div class="absolute inset-0 bg-[#d4af37] transform translate-x-4 translate-y-4"></div>
+                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=2070&auto=format&fit=crop" alt="Creative Director" class="relative z-10 w-full shadow-lg grayscale hover:grayscale-0 transition duration-700">
+            </div>
+
+            <div class="w-full md:w-1/2 text-center md:text-right">
+                <h4 class="text-[#d4af37] text-xs font-bold uppercase tracking-[0.3em] mb-4">A Note from the Atelier</h4>
+                <h2 class="font-serif text-4xl text-brand-black mb-6">"Luxury is the ease of a t-shirt in a very expensive dress."</h2>
+                <p class="text-gray-600 text-sm leading-7 mb-8">
+                    We invite you to experience a world where the noise of trends is silenced by the quiet confidence of style. Welcome to Samyus.
+                </p>
+                <a href="#" class="inline-block border border-gray-900 px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-brand-black hover:text-white transition duration-300">
+                    View The Collection
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-[#f5f3ee] text-gray-800 pt-20 pb-10 border-t border-[#d4af37]/30 font-sans">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col items-center text-center mb-16">
+                <img src="assets/logo.jpeg" alt="Samyus Logo" class="h-16 mb-6 object-contain mix-blend-multiply">
+                <p class="max-w-2xl text-gray-500 text-sm leading-relaxed tracking-wide font-light">
+                    Crafting the future of luxury through heritage techniques and modern vision. 
+                </p>
+            </div>
+            <div class="flex justify-between items-center text-xs text-gray-400 border-t border-[#d4af37]/10 pt-8">
+                <div>&copy; 2026 Samyus.</div>
+                <div class="flex gap-4">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-pinterest"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
