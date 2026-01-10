@@ -65,3 +65,56 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 });
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+            
+            // 1. Mobile Menu Logic
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const closeMenu = document.getElementById('close-menu');
+            const mobileOverlay = document.getElementById('mobile-overlay');
+            const mobileDrawer = document.getElementById('mobile-drawer');
+
+            if (mobileToggle && mobileDrawer) {
+                function openMobileMenu() {
+                    mobileOverlay.classList.remove('hidden');
+                    setTimeout(() => mobileOverlay.classList.remove('opacity-0'), 10);
+                    mobileDrawer.classList.remove('-translate-x-full');
+                    document.body.style.overflow = 'hidden'; 
+                }
+                function closeMobileMenu() {
+                    mobileOverlay.classList.add('opacity-0');
+                    mobileDrawer.classList.add('-translate-x-full');
+                    setTimeout(() => {
+                        mobileOverlay.classList.add('hidden');
+                        document.body.style.overflow = 'auto'; 
+                    }, 300);
+                }
+                mobileToggle.addEventListener('click', openMobileMenu);
+                if (closeMenu) closeMenu.addEventListener('click', closeMobileMenu);
+                if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+            }
+
+            // 2. Scroll To Top Logic
+            const scrollBtn = document.getElementById('scrollToTopBtn');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollBtn.classList.remove('translate-y-10', 'opacity-0', 'pointer-events-none');
+                } else {
+                    scrollBtn.classList.add('translate-y-10', 'opacity-0', 'pointer-events-none');
+                }
+            });
+
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+        });
