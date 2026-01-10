@@ -143,59 +143,61 @@
         </div>
     </div>
 
-    <section class="pt-16 pb-12 border-b border-[#d4af37]/10 relative">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-between items-end mb-8">
-                <div>
-                    <h4 class="text-[#d4af37] text-[10px] font-bold uppercase tracking-[0.3em] mb-2">Just Arrived</h4>
-                    <h2 class="font-serif text-3xl text-[#1a1a1a]">The Modern Drape</h2>
-                </div>
-                <a href="#" class="text-[10px] font-bold uppercase border-b border-gray-300 hover:border-[#d4af37] pb-1 hidden md:block">View Collection</a>
+<section class="py-16 pb-20 border-b border-[#d4af37]/10 relative bg-white">
+    <div class="container mx-auto px-6">
+        
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h4 class="text-[#d4af37] text-[10px] font-bold uppercase tracking-[0.3em] mb-2">Just Arrived</h4>
+                <h2 class="font-serif text-3xl md:text-4xl text-[#1a1a1a]">The Modern Drape</h2>
             </div>
-
-            <div class="relative group">
-                <button id="scroll-left" class="hidden md:flex absolute left-0 top-[40%] -translate-y-1/2 -translate-x-5 z-20 bg-white text-[#d4af37] w-12 h-12 rounded-full shadow-lg items-center justify-center hover:bg-[#d4af37] hover:text-white border border-[#d4af37]/20 transition-all">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-
-                <div id="product-scroll-container" class="flex overflow-x-auto gap-6 no-scrollbar pb-4 scroll-smooth snap-x snap-mandatory">
-                    <div class="min-w-[280px] md:min-w-[320px] snap-center group/card cursor-pointer">
-                        <div class="relative overflow-hidden aspect-[3/4] mb-4">
-                            <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=80&w=1946&auto=format&fit=crop" class="w-full h-full object-cover transition duration-1000 group-hover/card:scale-105">
-                        </div>
-                        <h3 class="font-serif text-lg text-[#1a1a1a]">Velvet Gown</h3>
-                        <p class="text-xs text-gray-500 mt-1">Midnight Blue Satin</p>
-                    </div>
-                    <div class="min-w-[280px] md:min-w-[320px] snap-center group/card cursor-pointer">
-                        <div class="relative overflow-hidden aspect-[3/4] mb-4">
-                            <img src="https://images.unsplash.com/photo-1617137968427-85924c809a10?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover transition duration-1000 group-hover/card:scale-105">
-                            <div class="absolute top-3 left-3 bg-[#d4af37] text-white text-[9px] px-2 py-1 uppercase font-bold tracking-wider">New</div>
-                        </div>
-                        <h3 class="font-serif text-lg text-[#1a1a1a]">Ikkath Fusion Kurti</h3>
-                        <p class="text-xs text-gray-500 mt-1">Handwoven Ikat</p>
-                    </div>
-                    <div class="min-w-[280px] md:min-w-[320px] snap-center group/card cursor-pointer">
-                        <div class="relative overflow-hidden aspect-[3/4] mb-4">
-                            <img src="https://images.unsplash.com/photo-1631233859262-0d62bf36f951?q=80&w=1887&auto=format&fit=crop" class="w-full h-full object-cover transition duration-1000 group-hover/card:scale-105">
-                        </div>
-                        <h3 class="font-serif text-lg text-[#1a1a1a]">Organza Floral Saree</h3>
-                        <p class="text-xs text-gray-500 mt-1">Sheer Organza</p>
-                    </div>
-                    <div class="min-w-[280px] md:min-w-[320px] snap-center group/card cursor-pointer">
-                        <div class="relative overflow-hidden aspect-[3/4] mb-4">
-                            <img src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=1887&auto=format&fit=crop" class="w-full h-full object-cover transition duration-1000 group-hover/card:scale-105">
-                        </div>
-                        <h3 class="font-serif text-lg text-[#1a1a1a]">Kalamkari Anarkali</h3>
-                        <p class="text-xs text-gray-500 mt-1">Hand-Painted Cotton</p>
-                    </div>
-                </div>
-
-                <button id="scroll-right" class="hidden md:flex absolute right-0 top-[40%] -translate-y-1/2 translate-x-5 z-20 bg-white text-[#d4af37] w-12 h-12 rounded-full shadow-lg items-center justify-center hover:bg-[#d4af37] hover:text-white border border-[#d4af37]/20 transition-all">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
+            <a href="#" class="text-[10px] font-bold uppercase border-b border-gray-300 hover:border-[#d4af37] pb-1 hidden md:block transition-colors">View All</a>
         </div>
-    </section>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden aspect-[3/4] mb-4">
+                    <img src="assets/products/Cotton/Cotton Sudithar.jpg" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105">
+                </div>
+                <h3 class="font-serif text-lg text-[#1a1a1a] group-hover:text-[#d4af37] transition-colors">Cotton</h3>
+                <p class="text-xs text-gray-500 mt-1">Kurthi</p>
+            </div>
+
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden aspect-[3/4] mb-4">
+                    <img src="assets/products/Ikath/Ikath blouse.jpg" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105">
+                    <div class="absolute top-3 left-3 bg-[#d4af37] text-white text-[9px] px-2 py-1 uppercase font-bold tracking-wider">New</div>
+                </div>
+                <h3 class="font-serif text-lg text-[#1a1a1a] group-hover:text-[#d4af37] transition-colors">Ikkath </h3>
+                <p class="text-xs text-gray-500 mt-1">Blouse</p>
+            </div>
+
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden aspect-[3/4] mb-4">
+                    <img src="assets/products/Organza/Organza Saree.jpg" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105">
+                </div>
+                <h3 class="font-serif text-lg text-[#1a1a1a] group-hover:text-[#d4af37] transition-colors">Organza</h3>
+                <p class="text-xs text-gray-500 mt-1">Saree</p>
+            </div>
+
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden aspect-[3/4] mb-4">
+                    <img src="assets/products/Silk/silk blouse.jpg" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105">
+                </div>
+                <h3 class="font-serif text-lg text-[#1a1a1a] group-hover:text-[#d4af37] transition-colors">Silk</h3>
+                <p class="text-xs text-gray-500 mt-1">Blouse</p>
+            </div>
+
+        </div>
+
+        <div class="mt-10 text-center md:hidden">
+            <a href="#" class="inline-block text-[10px] font-bold uppercase border border-gray-300 px-6 py-3 hover:bg-[#1a1a1a] hover:text-white hover:border-[#1a1a1a] transition-all">View Full Collection</a>
+        </div>
+
+    </div>
+</section>
+
 
     <section id="fabric-section" class="py-20 bg-white">
         <div class="container mx-auto px-6">
@@ -211,7 +213,7 @@
 
                 <div class="group">
                     <div class="relative overflow-hidden mb-3 border border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1598414446473-b2650570b56c?q=80&w=1935&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <img src="assets/products/Ikath/Ikath Frok.jpg" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
                         <div class="absolute bottom-0 w-full bg-white/90 py-2 text-center text-[10px] uppercase font-bold tracking-widest translate-y-full group-hover:translate-y-0 transition duration-300">View Swatches</div>
                     </div>
                     <h3 class="font-serif text-lg text-[#1a1a1a]">Ikkath</h3>
@@ -220,7 +222,7 @@
 
                 <div class="group">
                     <div class="relative overflow-hidden mb-3 border border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1629079447841-a61053ef0913?q=80&w=1887&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <img src="assets/products/Jaipur/Jaipuri Cotton Saree.jpg" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
                         <div class="absolute bottom-0 w-full bg-white/90 py-2 text-center text-[10px] uppercase font-bold tracking-widest translate-y-full group-hover:translate-y-0 transition duration-300">View Swatches</div>
                     </div>
                     <h3 class="font-serif text-lg text-[#1a1a1a]">Jaipur Cotton</h3>
@@ -229,7 +231,7 @@
 
                 <div class="group">
                     <div class="relative overflow-hidden mb-3 border border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1610189012906-4783382752f2?q=80&w=1888&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <img src="assets/products/kalamkari/Kalamkari Saree.jpg" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
                         <div class="absolute bottom-0 w-full bg-white/90 py-2 text-center text-[10px] uppercase font-bold tracking-widest translate-y-full group-hover:translate-y-0 transition duration-300">View Swatches</div>
                     </div>
                     <h3 class="font-serif text-lg text-[#1a1a1a]">Kalamkari</h3>
@@ -238,7 +240,7 @@
 
                 <div class="group">
                     <div class="relative overflow-hidden mb-3 border border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1605218439524-b3ddb2bc7595?q=80&w=1887&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <img src="assets/coming-soon.jpg" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
                         <div class="absolute bottom-0 w-full bg-white/90 py-2 text-center text-[10px] uppercase font-bold tracking-widest translate-y-full group-hover:translate-y-0 transition duration-300">View Swatches</div>
                     </div>
                     <h3 class="font-serif text-lg text-[#1a1a1a]">Banarasi Brocade</h3>
@@ -247,7 +249,7 @@
 
                 <div class="group">
                     <div class="relative overflow-hidden mb-3 border border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1582236521556-9915c2ba244f?q=80&w=1887&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <img src="assets/products/Organza/Organza Sudithar.jpg" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
                     </div>
                     <h3 class="font-serif text-lg text-[#1a1a1a]">Pure Organza</h3>
                     <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Saree | Blouse | Frock</p>
@@ -255,7 +257,7 @@
 
                 <div class="group">
                     <div class="relative overflow-hidden mb-3 border border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1770&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <img src="assets/products/Georgette/Georgette Lehenga.jpg" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
                     </div>
                     <h3 class="font-serif text-lg text-[#1a1a1a]">Fluid Georgette</h3>
                     <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Frock | Kurti | Lehenga</p>
@@ -263,7 +265,7 @@
 
                 <div class="group">
                     <div class="relative overflow-hidden mb-3 border border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1595991209266-5ff5a3a2f008?q=80&w=1887&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <img src="assets/products/Silk/SILK LEHENGA.jpg" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
                     </div>
                     <h3 class="font-serif text-lg text-[#1a1a1a]">Raw Silk</h3>
                     <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Blouse | Heritage Lehenga</p>
@@ -271,7 +273,7 @@
 
                 <div class="group">
                     <div class="relative overflow-hidden mb-3 border border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1583391733958-e026f3334e6c?q=80&w=1887&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <img src="assets/coming-soon.jpg" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
                     </div>
                     <h3 class="font-serif text-lg text-[#1a1a1a]">Embroidered Net</h3>
                     <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Layered Lehengas</p>
@@ -279,7 +281,7 @@
 
                 <div class="group">
                     <div class="relative overflow-hidden mb-3 border border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1606293926075-69a00febf280?q=80&w=1892&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <img src="assets/products/Cotton/Cotton frock product.jpg" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
                     </div>
                     <h3 class="font-serif text-lg text-[#1a1a1a]">Organic Cotton</h3>
                     <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Kurti | Blouse | Frock</p>
@@ -287,7 +289,7 @@
 
                 <div class="group">
                     <div class="relative overflow-hidden mb-3 border border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1601625126839-444449830843?q=80&w=1911&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <img src="assets/products/Rayon/Rayon Kurthi.jpg" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
                     </div>
                     <h3 class="font-serif text-lg text-[#1a1a1a]">Soft Rayon</h3>
                     <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Everyday Kurtis</p>
@@ -295,7 +297,7 @@
 
                 <div class="group">
                     <div class="relative overflow-hidden mb-3 border border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1565269785535-64d4b291d9d9?q=80&w=1887&auto=format&fit=crop" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
+                        <img src="assets/coming-soon.jpg" class="w-full h-[300px] object-cover transition duration-700 group-hover:scale-105">
                     </div>
                     <h3 class="font-serif text-lg text-[#1a1a1a]">Lustrous Satin</h3>
                     <p class="text-[10px] uppercase tracking-wide text-[#d4af37] mt-1">Evening Frocks</p>
