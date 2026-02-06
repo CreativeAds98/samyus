@@ -485,7 +485,7 @@
             </h2>
 
             <p class="text-gray-600 text-sm md:text-base leading-8 font-light tracking-wide mb-12 max-w-xl mx-auto lg:mx-0">
-                We often forget that the stitching is what holds our clothes together. In our daily life, we move, we stretch, and we work. If the stitching is weak, the dress loses its shape or tears easily. That is why we focus on strong, double-lock stitching at **Samyu's Boutique**. It ensures your favorite clothes handle the stress of everyday life without giving up on you.
+                We often forget that the stitching is what holds our clothes together. In our daily life, we move, we stretch, and we work. If the stitching is weak, the dress loses its shape or tears easily. That is why we focus on strong, double-lock stitching at **Samyu's Boutiquie**. It ensures your favorite clothes handle the stress of everyday life without giving up on you.
             </p>
 
                 <div class="flex flex-wrap justify-center lg:justify-start gap-x-10 gap-y-8 mb-12 border-t border-gray-100 pt-10">
@@ -604,13 +604,33 @@
             <div>
                 <h4 class="text-[#d4af37] text-xs font-bold uppercase tracking-widest mb-6">The Newsletter</h4>
                 <p class="text-gray-500 text-xs mb-4">Be the first to receive updates on new collections and private events.</p>
-                <form class="flex flex-col space-y-3">
-                    <input type="email" placeholder="Email Address" 
-                           class="bg-white border border-gray-300 text-gray-800 text-sm px-4 py-3 outline-none focus:border-[#d4af37] transition-colors w-full rounded-sm shadow-sm placeholder-gray-400">
-                    <button class="bg-[#d4af37] text-white text-xs font-bold uppercase tracking-widest py-3 hover:bg-[#b08d2f] transition-colors w-full rounded-sm shadow-sm">
-                        Subscribe
-                    </button>
-                </form>
+                        <form 
+                        action="https://api.web3forms.com/submit" 
+                        method="POST"
+                        class="flex flex-col space-y-3"
+                        >
+
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="82ddfa77-cc30-4b61-8cb5-2e5a3ede8950">
+
+                        <!-- Optional subject -->
+                        <input type="hidden" name="subject" value="Newsletter Subscription">
+
+                        <input 
+                            type="email" 
+                            name="email"
+                            required
+                            placeholder="Email Address" 
+                            class="bg-white border border-gray-300 text-gray-800 text-sm px-4 py-3 outline-none focus:border-[#d4af37] transition-colors w-full rounded-sm shadow-sm placeholder-gray-400">
+
+                        <button 
+                            type="submit"
+                            class="bg-[#d4af37] text-white text-xs font-bold uppercase tracking-widest py-3 hover:bg-[#b08d2f] transition-colors w-full rounded-sm shadow-sm">
+                            Subscribe
+                        </button>
+
+                        </form>
+
             </div>
 
         </div>
